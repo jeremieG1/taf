@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<root name="test_case">
+    <node name="line">
+		<node name="pointA">
+			<parameter name="x" type="integer" min="-100" max="100"/>
+			<parameter name="y" type="integer" min="-100" max="100"/>
+	    </node>
+		<node name="pointB">
+			<parameter name="x" type="integer" min="-100" max="100"/>
+			<parameter name="y" type="integer" min="-100" max="100"/>
+	    </node>
+    </node>
+</root>

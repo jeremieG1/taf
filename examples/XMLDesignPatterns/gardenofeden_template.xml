@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--comment -->
+<root name="test_case">
+
+    <type name="pointType" nb_instances="0">
+		<parameter name="x" type="integer" min="-100" max="100"/>
+		<parameter name="y" type="integer" min="-100" max="100"/>
+	 </type>
+    
+	
+
+	<type name="lineType" >
+		<node name="pointA" ref="pointI"/>
+		<node name ="pointB" ref="pointJ"/>
+	</type>
+
+	<node name="pointI" type="pointType"/>
+	<node name="pointJ" type="pointType"/>
+	<node name="line" type="lineType"/>
+	
+
+</root>

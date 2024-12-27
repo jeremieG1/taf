@@ -1,0 +1,30 @@
+<!ELEMENT root (parameter*, node*, constraint*)>
+<!ELEMENT node (parameter*, node*, constraint*)>
+<!ELEMENT parameter EMPTY>
+<!ELEMENT constraint EMPTY>
+
+<!ATTLIST root name CDATA #REQUIRED>
+<!ATTLIST node name CDATA #REQUIRED
+	       min CDATA #IMPLIED
+	       max CDATA #IMPLIED
+	       nb_instances CDATA #IMPLIED>
+	       distribution (u | n | i) #IMPLIED
+	       mean CDATA #IMPLIED
+	       variance CDATA #IMPLIED>
+	       ranges CDATA #IMPLIED
+	       weights CDATA #IMPLIED
+<!ATTLIST constraint name CDATA #REQUIRED
+		     expressions CDATA #REQUIRED
+		     types (forall | exist | unique) #REQUIRED
+		     quantifiers CDATA #IMPLIED
+		     ranges CDATA #IMPLIED>
+<!ATTLIST parameter name CDATA #REQUIRED
+		    types (boolean | string | integer | real) #IMPLIED
+		    values CDATA #IMPLIED
+		    ranges CDATA #IMPLIED
+		    weights CDATA #IMPLIED
+	 	    min CDATA #IMPLIED
+	   	    max CDATA #IMPLIED
+		    distribution (u | n | i) #IMPLIED
+		    mean CDATA #IMPLIED
+		    variance CDATA #IMPLIED>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root name="test_case">
+	<node name="typeNode" nb_instances="1">
+		<parameter name="key" type="integer" min="1" max="100"/>
+		<reference name="leftSon" ref="typeNode" max_branching="1" max_depth="2"/>
+		<reference name="rightSon" ref="typeNode" max_branching="1" max_depth="2"/>
+	</node>
+</root>

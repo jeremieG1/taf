@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<root name="test_case">
+	<node name="drone">
+		<parameter name="port" type="string" values="ros"/>
+		<parameter name="params_file" type="string" values="samples/flights/mission1-params.csv"/>
+		<parameter name="mission_file" type="string" values="samples/flights/mission1.plan"/>
+	</node>
+	<node name="simulation">
+		<parameter name="simulator" type="string" values="ros"/>
+		<parameter name="speed" type="integer" min="1" max="1"/>
+		<parameter name="headless" type="boolean" value="true"/>
+		<node name="obstacles" min="2" max="4">
+			<node name="size">
+				<parameter name="l" type="integer" min="1" max="10"/>
+				<parameter name="w" type="integer" min="1" max="10"/>
+				<parameter name="h" type="integer" min="1" max="10"/>
+			</node>
+			<node name="position">
+				<parameter name="x" type="integer" min="-10" max="10"/>
+				<parameter name="y" type="integer" min="-10" max="10"/>
+				<parameter name="z" type="integer" min="-10" max="10"/>
+				<parameter name="r" type="integer" min="0" max="359"/>
+			</node>
+		</node>
+	</node>
+	<node name="test">
+		<parameter name="commands_files" type="string" values="samples/flights/mission1-commands.csv"/>
+	</node>
+
+	<node name="assertion">
+		<parameter name="log_file" type="string" values="samples/flights/mission1.ulg"/>
+		<parameter name="variable" type="string" values="trajectory"/>
+	</node>
+</root>

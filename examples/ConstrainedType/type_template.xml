@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<root name="test_case">
+
+<type name="simpleType">
+	<parameter name="typeParam" type="integer" min="0" max="10"/>
+	<node name="toto" nb_instances="2">
+	<parameter name="paramT" type="integer" min="0" max="10"/>
+	<parameter name="paramT2" type="integer" min="0" max="10"/>
+	<parameter name="paramT3" type="integer" min="0" max="10"/>
+	</node>
+	<constraint name="cType" expressions="simpleType\toto[0]\paramT EQ 10" />
+	<constraint name="cType1" expressions="simpleType\toto[1]\paramT EQ 10" />
+	<constraint name="cType2" expressions="simpleType\typeParam EQ 10" />;
+	<constraint name="cType3" expressions="simpleType\toto[i]\paramT2 EQ 10" types="forall" quantifiers="i" ranges="[0,1]"/>
+</type>
+
+<node name="typeInstantiation" type="simpleType">
+	<parameter name="paramN" type="integer" min="0" max="10"/>
+	<constraint name="cNode" expressions="typeInstantiation[0]\paramN EQ 10" />
+	<constraint name="cNode1" expressions="typeInstantiation[0]\toto[i]\paramT3 EQ 10" types="forall" quantifiers="i" ranges="[0,1]" />
+</node>
+
+<node name="typeInstantiation2" type="simpleType">
+	<parameter name="paramN2" type="integer" min="0" max="10"/>
+	<constraint name="cNode2" expressions="typeInstantiation2[0]\paramN2 EQ 10" />
+	<constraint name="cNode22" expressions="typeInstantiation2[0]\toto[i]\paramT3 EQ 10" types="forall" quantifiers="i" ranges="[0,..\toto.nb_instances+1]" />
+</node>
+
+</root>

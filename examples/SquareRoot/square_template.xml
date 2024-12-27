@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root name="test_case">
+<node name="my_node">
+	<parameter name="root" type="integer" min="1" max="10"/>
+	<parameter name="square" type="integer"	min="1" max="100"/>
+	<constraint name="squared" expressions="my_node[0]\root^2 EQ my_node[0]\square" />
+</node>
+</root>

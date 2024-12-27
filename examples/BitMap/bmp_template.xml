@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<root name="test_case">
+	<node name="row" min="10" max="10">
+		<node name="pixel" min="10" max="10">
+			<parameter name="gray" type="integer" min="0" max="255"/>
+		</node>
+
+		<constraint name="nb_pixel" types="forall"
+			    expressions="row[i]\pixel.nb_instances EQ row.nb_instances"
+		            quantifiers="i"
+			    ranges="[0, row.nb_instances-1]"/>
+
+		<constraint name="horizontal_gradient" types="forall;forall"
+			    expressions="row[i]\pixel[j]\gray INF row[i]\pixel[j+1]\gray"
+		            quantifiers="i;j"
+			    ranges="[0, row.nb_instances-1];[0, row.nb_instances-2]"/>
+		
+		<constraint name="vertical_gradient" types="forall;forall"
+			    expressions="row[i]\pixel[j]\gray INF row[i+1]\pixel[j]\gray"
+		            quantifiers="i;j"
+			    ranges="[0, row.nb_instances-2];[0, row.nb_instances-1]"/>
+
+		<constraint name="blnoir"
+			    expressions="row[0]\pixel[0]\gray EQ 0;
+							 row[row.nb_instances-1]\pixel[row.nb_instances-1]\gray EQ 255"/>
+	
+	</node>
+	<parameter name="padding" type="integer" min="0" max="3"/>
+	<constraint name="nb_padding"
+		expressions="(4-(3*test_case\row.nb_instances)%4)%4 EQ test_case\padding"/>
+</root>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<root name="test_case">
+	<node name="typeNode" nb_instances="1">
+		<parameter name="key" type="integer" min="1" max="100"/>
+		<reference name="leftSon" ref="typeNode" depth="2"/>
+		<reference name="rightSon" ref="typeNode"  depth="2"/>
+<!-- max_branching = "1" -->
+		<constraint name="slash"
+			expressions="typeNode[0]\key SUP 50"
+		/>
+		<!-- <constraint name="slash2"
+			expressions="typeNode[0]\key DIF typeNode[0]\\leftSon[0]\key;typeNode[0]\key DIF typeNode[0]\\rightSon[0]\key;typeNode[0]\\leftSon[0]\key DIF typeNode[0]\\rightSon[0]\key"
+		/> -->
+		<!-- <constraint name="keysDifferent"
+				expressions="AND(typeNode[0]\key DIF typeNode[0]\leftSon[0]\key, AND(typeNode[0]\key DIF typeNode[0]\rightSon[0]\key, typeNode[0]\rightSon[0]\key DIF typeNode[0]\leftSon[0]\key))"
+		/> -->
+	</node>
+
+</root>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<root name="test_case">
+    <node name="pointType" nb_instances="0">
+		<parameter name="x" type="integer" min="-15" max="15"/>
+		<parameter name="y" type="integer" min="-15" max="15"/>
+		<parameter name="v" type="integer" min="1" max="25"/>
+	 </node>
+
+	<node name="grapheType" nb_instances="0">
+		<node name="point" ref="pointType" branching="2"/> 
+	</node>
+
+	<node name="graphe" ref="grapheType">
+		<constraint name="nonColinearite"
+			expressions="(graphe[0]\point[1]\y - graphe[0]\point[0]\y) * (-graphe[0]\point[0]\x) DIF (-graphe[0]\point[0]\y) * (graphe[0]\point[1]\x - graphe[0]\point[0]\x)"
+		/>
+
+		<constraint name="distanceABO"
+			expressions="(graphe[0]\point[1]\x - graphe[0]\point[0]\x)^2 +
+						 (graphe[0]\point[1]\y - graphe[0]\point[0]\y)^2 
+						 SUP 49;
+						 (graphe[0]\point[1]\x)^2 +
+						 (graphe[0]\point[1]\y)^2
+						 SUP 49;
+						 (graphe[0]\point[0]\x)^2 +
+						 (graphe[0]\point[0]\y)^2 
+						 SUP 49"
+		/>
+
+		<constraint name="seCroisent" types="exist"
+            expressions="AND(
+					((graphe[0]\point[0]\x + t * graphe[0]\point[0]\v)^2
+					+ 
+					(graphe[0]\point[0]\y + t * graphe[0]\point[0]\v)^2)
+					INF 16
+				,
+					((graphe[0]\point[1]\x + t * graphe[0]\point[1]\v)^2
+					+
+					(graphe[0]\point[1]\y + t * graphe[0]\point[1]\v)^2)
+					INF 16)"
+            quantifiers="t"
+            ranges="[1, 100]"
+        />
+	</node>
+
+</root>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+
+<root name="test_case">
+    <node name="tax_payer" min="1" max="100">
+        <parameter name="birth_year" type="integer" min="1920" max="2021"/>
+        <parameter name="disability_rate" type="real" min="0" max="1"/>
+        <parameter name="disability_type" type="string" values="None;Vision;A"/>
+        <parameter name="is_resident" type="boolean"/>
+	<node name="address" min="1" max="3">
+            <parameter name="country" type="string" values="LU;FR;BE;DE;OTHER"/>
+    </node>
+
+        <node name="child" min="0" max="3">
+            <parameter name="birth_year" type="integer" min="1920" max="2020"/>
+            <parameter name="disability_rate" type="real" min="0" max="1"/>
+            <parameter name="disability_type" type="string" values="None;Vision;A"/>
+            <node name="address" min="1" max="3">
+            	<parameter name="country" type="string" values="LU;FR;BE;DE;OTHER"/>
+            </node>
+            <constraint name="c2a" types="forall"
+	                expressions="IMPLIES(child[i]\disability_type EQ None, child[i]\disability_rate EQ 0);IMPLIES(child[i]\disability_rate EQ 0, child[i]\disability_type EQ None)"
+	                quantifiers="i"
+	                ranges="[0, child.nb_instances-1]"/>
+        </node>
+
+        <node name="income_pension" min="0" max="3">
+            <parameter name="is_local" type="boolean"/>
+            <parameter name="tax_card" type="integer" min="0" max="2"/>
+        </node>
+        <node name="income_employment" min="0" max="3">
+            <parameter name="is_local" type="boolean"/>
+            <parameter name="tax_card" type="integer" min="0" max="2"/>
+        </node>
+        <node name="income_other" min="0" max="3">
+            <parameter name="is_local" type="boolean"/>
+        </node>
+	<constraint name="income" types="forall"
+	            expressions="tax_payer[i]\income_pension.nb_instances + tax_payer[i]\income_employment.nb_instances + tax_payer[i]\income_other.nb_instances INFEQ 3;tax_payer[i]\income_pension.nb_instances + tax_payer[i]\income_employment.nb_instances + tax_payer[i]\income_other.nb_instances SUP 0"
+	                quantifiers="i"
+	                ranges="[0, tax_payer.nb_instances-1]"/>
+        <constraint name="c2" types="forall"
+	            expressions="IMPLIES(tax_payer[i]\disability_type EQ None, tax_payer[i]\disability_rate EQ 0);IMPLIES(tax_payer[i]\disability_rate EQ 0, tax_payer[i]\disability_type EQ None)"
+	            quantifiers="i"
+	            ranges="[0, tax_payer.nb_instances-1]"/>
+	<constraint name="c3" types="forall;forall"
+	            expressions="IMPLIES(tax_payer[i]\address[j]\country EQ LU, tax_payer[i]\is_resident EQ True)"
+	            quantifiers="i;j"
+	            ranges="[0, tax_payer.nb_instances-1];[0, tax_payer[i]\address.nb_instances-1]"/>
+	<constraint name="c4_pension" types="forall;forall;exist"
+	            expressions="IMPLIES(AND(tax_payer[i]\income_pension[j]\is_local EQ True, NOT(tax_payer[i]\address[k]\country EQ LU)), tax_payer[i]\is_resident EQ False)"
+	            quantifiers="i;j;k"
+	            ranges="[0, tax_payer.nb_instances-1];[0, tax_payer[i]\income_pension.nb_instances-1];[0, tax_payer[i]\address.nb_instances-1]"/>
+	<constraint name="c4_employment" types="forall;forall;exist"
+	            expressions="IMPLIES(AND(tax_payer[i]\income_pension[j]\is_local EQ True, NOT(tax_payer[i]\address[k]\country EQ LU)), tax_payer[i]\is_resident EQ False)"
+	            quantifiers="i;j;k"
+	            ranges="[0, tax_payer.nb_instances-1];[0, tax_payer[i]\income_employment.nb_instances-1];[0, tax_payer[i]\address.nb_instances-1]"/>
+	<constraint name="c4_other" types="forall;forall;exist"
+	            expressions="IMPLIES(AND(tax_payer[i]\income_pension[j]\is_local EQ True, NOT(tax_payer[i]\address[k]\country EQ LU)), tax_payer[i]\is_resident EQ False)"
+	            quantifiers="i;j;k"
+	            ranges="[0, tax_payer.nb_instances-1];[0, tax_payer[i]\income_other.nb_instances-1];[0, tax_payer[i]\address.nb_instances-1]"/>
+
+    </node>
+</root>

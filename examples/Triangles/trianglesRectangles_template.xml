@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<root name="test_case">
+    <node name="pointType" nb_instances="0">
+        <parameter name="x" type="integer" min="-100" max="100"/>
+        <parameter name="y" type="integer" min="-100" max="100"/>
+    </node>
+    <node name="triangleType" nb_instances="0">
+        <node name="point" ref="pointType" branching="3"/>
+    </node>
+
+    <node name="triangleRectangle" ref="triangleType">
+        <constraint name="pythagore"
+            expressions="
+                (triangleRectangle[0]\point[2]\x - triangleRectangle[0]\point[0]\x) ^ 2
+                + (triangleRectangle[0]\point[2]\y - triangleRectangle[0]\point[0]\y) ^ 2
+                EQ
+                (
+                (triangleRectangle[0]\point[1]\x - triangleRectangle[0]\point[0]\x) ^ 2
+                + (triangleRectangle[0]\point[1]\y - triangleRectangle[0]\point[0]\y) ^ 2
+                    +
+                (triangleRectangle[0]\point[2]\x - triangleRectangle[0]\point[1]\x) ^ 2
+                + (triangleRectangle[0]\point[2]\y - triangleRectangle[0]\point[1]\y) ^ 2
+                )
+            "
+        />
+
+        <constraint name="pasAligne"
+            expressions="
+                (triangleRectangle[0]\point[1]\y - triangleRectangle[0]\point[0]\y) * (triangleRectangle[0]\point[2]\x - triangleRectangle[0]\point[0]\x)
+                DIF
+                (triangleRectangle[0]\point[2]\y - triangleRectangle[0]\point[0]\y) * (triangleRectangle[0]\point[1]\x - triangleRectangle[0]\point[0]\x)
+            "
+        />
+    </node>
+</root>

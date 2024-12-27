@@ -1,0 +1,16 @@
+<settings>
+    <parameter name="template_path" type="path" value="" />
+    <parameter name="template_file_name" type="file" value="salamislice_template.xml" />
+    <parameter name="experiment_path" type="path" value="" />
+    <parameter name="experiment_folder_name" type="folder" value="output" />
+    <parameter name="nb_test_cases" type="integer" value="1" />
+    <parameter name="test_case_folder_name" type="folder" value="test_case" />
+    <parameter name="nb_test_artifacts" type="integer" value="1" />
+    <parameter name="test_artifact_folder_name" type="folder" value="test_artifact" />
+    <parameter name="parameter_max_nb_instances" type="integer" value="50" />
+    <parameter name="string_parameter_max_size" type="integer" value="50" />
+    <parameter name="node_max_nb_instances" type="integer" value="10" />
+    <parameter name="max_backtracking" type="integer" value="1" />
+    <parameter name="max_diversity" type="integer" value="10" />
+	<parameter name="z3_timeout" type="integer" value="10000" />
+</settings>

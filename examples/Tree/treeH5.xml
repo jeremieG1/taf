@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root name="test_case">
+	<parameter name="height" type="integer" min="4" max="4"/>
+	<node name="node" min="5" max="31">
+		<parameter	name="father" type="integer" min="-1" max="31"/>
+		<constraint name="root_father"
+			    expressions="node[0]\father EQ -1"/>		
+		<constraint name="other_father" types="forall"
+			    expressions="node[i]\father SUPEQ 0; node[i]\father INF node.nb_instances"
+			    quantifiers="i"
+			    ranges="[1,node.nb_instances-1]"/>
+
+		<parameter name="depth" type="integer" min="0" max="4"/>
+		<constraint name="inductive_depth_0"
+			    expressions="node[0]\depth EQ 0"/>
+		<constraint name="inductive_depth_1" types="forall;forall"
+			    expressions="IMPLIES(node[i]\father EQ j, node[j]\depth+1 EQ node[i]\depth)"
+			    quantifiers="i;j"
+			    ranges="[1,node.nb_instances-1];[0,node.nb_instances-1]"/>
+		<constraint name="height_depth_1" types="forall"
+			    expressions="node[i]\depth INFEQ ..\height"
+			    quantifiers="i"
+			    ranges="[1, node.nb_instances-1]"/>
+		<constraint name="height_depth_2"  types="exist"
+			    expressions="node[i]\depth EQ ..\height"
+			    quantifiers="i"
+			    ranges="[0,node.nb_instances-1]"/>		
+				
+	</node>
+
+	<constraint name="tree_height_1"
+		    expressions="test_case\height INFEQ test_case\node.nb_instances-1"/>
+	<constraint name="tree_height_2"
+		    expressions="IMPLIES(test_case\height EQ 0, test_case\node.nb_instances EQ 1)"/>
+</root>

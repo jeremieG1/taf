@@ -1,0 +1,60 @@
+# TAF: a tool for diverse and constrained test case generation
+
+# Welcome, this is a minimum working example for TAF
+# dependencies
+pip install z3-solver
+pip install numpy
+
+# Now download Taf tool 
+git clone https://redmine.laas.fr/laas/taf.git
+
+cd taf/
+ls
+cd templates/
+ls
+# this is the default template (generation of a bmp file)
+cat bmp.template
+cd ..
+ls
+# Let's launch taf tool !
+cd src
+ls
+python3 Taf.py
+# Now we display all the current project parameters
+display all
+parse_template # Taf has autocomplete on Linux!
+generate
+Y
+exit
+cd ..
+ls
+cd experiment/
+ls
+# 2 test_cases were generated as requested
+cd test_case_0
+ls
+# these are the instantiated parameters
+cat test_case_0.test_case
+
+# Let's see the export facility
+
+# For the export facility, the file Export.py should be completed by the user
+more Export.py 
+
+# The exported file is in the experiment folder
+
+
+# now we will show the help function and how to change the settings
+cd ..
+cd ..
+ls
+python3 Taf.py
+help
+help display
+display all
+help set
+set nb_test_cases
+Y
+display all
+parse_template
+...

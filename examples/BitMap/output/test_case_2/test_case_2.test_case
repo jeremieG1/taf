@@ -1,0 +1,325 @@
+<?xml version="1.0" ?>
+<test_case>
+	<seed value="870R1ncLRn"/>
+	<padding>2</padding>
+	<row instance="0/9">
+		<pixel instance="0/9">
+			<gray>0</gray>
+		</pixel>
+		<pixel instance="1/9">
+			<gray>1</gray>
+		</pixel>
+		<pixel instance="2/9">
+			<gray>2</gray>
+		</pixel>
+		<pixel instance="3/9">
+			<gray>3</gray>
+		</pixel>
+		<pixel instance="4/9">
+			<gray>4</gray>
+		</pixel>
+		<pixel instance="5/9">
+			<gray>5</gray>
+		</pixel>
+		<pixel instance="6/9">
+			<gray>6</gray>
+		</pixel>
+		<pixel instance="7/9">
+			<gray>7</gray>
+		</pixel>
+		<pixel instance="8/9">
+			<gray>8</gray>
+		</pixel>
+		<pixel instance="9/9">
+			<gray>9</gray>
+		</pixel>
+	</row>
+	<row instance="1/9">
+		<pixel instance="0/9">
+			<gray>121</gray>
+		</pixel>
+		<pixel instance="1/9">
+			<gray>122</gray>
+		</pixel>
+		<pixel instance="2/9">
+			<gray>123</gray>
+		</pixel>
+		<pixel instance="3/9">
+			<gray>124</gray>
+		</pixel>
+		<pixel instance="4/9">
+			<gray>125</gray>
+		</pixel>
+		<pixel instance="5/9">
+			<gray>126</gray>
+		</pixel>
+		<pixel instance="6/9">
+			<gray>127</gray>
+		</pixel>
+		<pixel instance="7/9">
+			<gray>128</gray>
+		</pixel>
+		<pixel instance="8/9">
+			<gray>129</gray>
+		</pixel>
+		<pixel instance="9/9">
+			<gray>130</gray>
+		</pixel>
+	</row>
+	<row instance="2/9">
+		<pixel instance="0/9">
+			<gray>122</gray>
+		</pixel>
+		<pixel instance="1/9">
+			<gray>123</gray>
+		</pixel>
+		<pixel instance="2/9">
+			<gray>124</gray>
+		</pixel>
+		<pixel instance="3/9">
+			<gray>125</gray>
+		</pixel>
+		<pixel instance="4/9">
+			<gray>126</gray>
+		</pixel>
+		<pixel instance="5/9">
+			<gray>127</gray>
+		</pixel>
+		<pixel instance="6/9">
+			<gray>128</gray>
+		</pixel>
+		<pixel instance="7/9">
+			<gray>129</gray>
+		</pixel>
+		<pixel instance="8/9">
+			<gray>130</gray>
+		</pixel>
+		<pixel instance="9/9">
+			<gray>131</gray>
+		</pixel>
+	</row>
+	<row instance="3/9">
+		<pixel instance="0/9">
+			<gray>123</gray>
+		</pixel>
+		<pixel instance="1/9">
+			<gray>124</gray>
+		</pixel>
+		<pixel instance="2/9">
+			<gray>125</gray>
+		</pixel>
+		<pixel instance="3/9">
+			<gray>126</gray>
+		</pixel>
+		<pixel instance="4/9">
+			<gray>127</gray>
+		</pixel>
+		<pixel instance="5/9">
+			<gray>128</gray>
+		</pixel>
+		<pixel instance="6/9">
+			<gray>129</gray>
+		</pixel>
+		<pixel instance="7/9">
+			<gray>130</gray>
+		</pixel>
+		<pixel instance="8/9">
+			<gray>131</gray>
+		</pixel>
+		<pixel instance="9/9">
+			<gray>132</gray>
+		</pixel>
+	</row>
+	<row instance="4/9">
+		<pixel instance="0/9">
+			<gray>134</gray>
+		</pixel>
+		<pixel instance="1/9">
+			<gray>135</gray>
+		</pixel>
+		<pixel instance="2/9">
+			<gray>136</gray>
+		</pixel>
+		<pixel instance="3/9">
+			<gray>137</gray>
+		</pixel>
+		<pixel instance="4/9">
+			<gray>138</gray>
+		</pixel>
+		<pixel instance="5/9">
+			<gray>139</gray>
+		</pixel>
+		<pixel instance="6/9">
+			<gray>140</gray>
+		</pixel>
+		<pixel instance="7/9">
+			<gray>141</gray>
+		</pixel>
+		<pixel instance="8/9">
+			<gray>142</gray>
+		</pixel>
+		<pixel instance="9/9">
+			<gray>143</gray>
+		</pixel>
+	</row>
+	<row instance="5/9">
+		<pixel instance="0/9">
+			<gray>135</gray>
+		</pixel>
+		<pixel instance="1/9">
+			<gray>136</gray>
+		</pixel>
+		<pixel instance="2/9">
+			<gray>149</gray>
+		</pixel>
+		<pixel instance="3/9">
+			<gray>150</gray>
+		</pixel>
+		<pixel instance="4/9">
+			<gray>151</gray>
+		</pixel>
+		<pixel instance="5/9">
+			<gray>154</gray>
+		</pixel>
+		<pixel instance="6/9">
+			<gray>155</gray>
+		</pixel>
+		<pixel instance="7/9">
+			<gray>156</gray>
+		</pixel>
+		<pixel instance="8/9">
+			<gray>157</gray>
+		</pixel>
+		<pixel instance="9/9">
+			<gray>158</gray>
+		</pixel>
+	</row>
+	<row instance="6/9">
+		<pixel instance="0/9">
+			<gray>136</gray>
+		</pixel>
+		<pixel instance="1/9">
+			<gray>137</gray>
+		</pixel>
+		<pixel instance="2/9">
+			<gray>150</gray>
+		</pixel>
+		<pixel instance="3/9">
+			<gray>151</gray>
+		</pixel>
+		<pixel instance="4/9">
+			<gray>152</gray>
+		</pixel>
+		<pixel instance="5/9">
+			<gray>155</gray>
+		</pixel>
+		<pixel instance="6/9">
+			<gray>156</gray>
+		</pixel>
+		<pixel instance="7/9">
+			<gray>157</gray>
+		</pixel>
+		<pixel instance="8/9">
+			<gray>158</gray>
+		</pixel>
+		<pixel instance="9/9">
+			<gray>159</gray>
+		</pixel>
+	</row>
+	<row instance="7/9">
+		<pixel instance="0/9">
+			<gray>137</gray>
+		</pixel>
+		<pixel instance="1/9">
+			<gray>138</gray>
+		</pixel>
+		<pixel instance="2/9">
+			<gray>151</gray>
+		</pixel>
+		<pixel instance="3/9">
+			<gray>152</gray>
+		</pixel>
+		<pixel instance="4/9">
+			<gray>153</gray>
+		</pixel>
+		<pixel instance="5/9">
+			<gray>156</gray>
+		</pixel>
+		<pixel instance="6/9">
+			<gray>157</gray>
+		</pixel>
+		<pixel instance="7/9">
+			<gray>158</gray>
+		</pixel>
+		<pixel instance="8/9">
+			<gray>159</gray>
+		</pixel>
+		<pixel instance="9/9">
+			<gray>160</gray>
+		</pixel>
+	</row>
+	<row instance="8/9">
+		<pixel instance="0/9">
+			<gray>138</gray>
+		</pixel>
+		<pixel instance="1/9">
+			<gray>139</gray>
+		</pixel>
+		<pixel instance="2/9">
+			<gray>152</gray>
+		</pixel>
+		<pixel instance="3/9">
+			<gray>153</gray>
+		</pixel>
+		<pixel instance="4/9">
+			<gray>154</gray>
+		</pixel>
+		<pixel instance="5/9">
+			<gray>157</gray>
+		</pixel>
+		<pixel instance="6/9">
+			<gray>158</gray>
+		</pixel>
+		<pixel instance="7/9">
+			<gray>159</gray>
+		</pixel>
+		<pixel instance="8/9">
+			<gray>160</gray>
+		</pixel>
+		<pixel instance="9/9">
+			<gray>161</gray>
+		</pixel>
+	</row>
+	<row instance="9/9">
+		<pixel instance="0/9">
+			<gray>139</gray>
+		</pixel>
+		<pixel instance="1/9">
+			<gray>140</gray>
+		</pixel>
+		<pixel instance="2/9">
+			<gray>153</gray>
+		</pixel>
+		<pixel instance="3/9">
+			<gray>154</gray>
+		</pixel>
+		<pixel instance="4/9">
+			<gray>155</gray>
+		</pixel>
+		<pixel instance="5/9">
+			<gray>158</gray>
+		</pixel>
+		<pixel instance="6/9">
+			<gray>159</gray>
+		</pixel>
+		<pixel instance="7/9">
+			<gray>160</gray>
+		</pixel>
+		<pixel instance="8/9">
+			<gray>161</gray>
+		</pixel>
+		<pixel instance="9/9">
+			<gray>255</gray>
+		</pixel>
+	</row>
+</test_case>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<root name="test_case">
+	<node name="typeNode">
+		<parameter name="key" type="integer" min="1" max="100"/>
+		<node name="leftSon" ref="typeNode" depth="2"/>
+		<node name="rightSon" ref="typeNode"  depth="2"/>
+	</node>
+
+	<node name="testTree" ref="typeNode" nb_instances="1">
+		<constraint name="slash"
+			expressions="testTree[0]\key EQ 1"
+		/>
+	</node>
+
+</root>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<root name="test_case">
+    <node name="field" nb_instances="1">
+        <parameter name="vegetable" type="string" values="cabbage;leek"/>
+        <node name="row" min="1" max="100">
+	        <parameter name="length" type="real" min="10.0" max="100.0"/>
+	        <parameter name="noise_X" type="real" min="0.0" max="5.0"/>
+	        <parameter name="noise_Y" type="real" min="0.0" max="5.0"/>
+	        <parameter name="disappearance_probability" type="real" min="0.0" max="30.0"/>
+	        <parameter name="vegetable_density" type="integer" min="1" max="5"/>
+
+	        <constraint name="interval" types="forall"
+	                    expressions="row[i]\length INFEQ 1.1*row[i-1]\length;
+                                     row[i]\length SUPEQ 0.9*row[i-1]\length"
+	                    quantifiers="i"
+	                    ranges="[1, row.nb_instances-1]"/>
+	        <constraint name="interval_2"
+	                    expressions="row[0]\length INFEQ 1.1*row[row.nb_instances - 1]\length;
+	                                 row[0]\length SUPEQ 0.9*row[row.nb_instances - 1]\length"/>
+	    </node>
+	    <node name="weed_area" min="2" max="101">
+	        <parameter name="grass_density" type="integer" min="0" max="5"/>
+	    </node>
+	    <node name="inner_track_width" min="0" max="99">
+	        <parameter name="gap" type="integer" min="55" max="165"/>
+	    </node>
+	    <constraint name="nb_weed_area"
+	                expressions=".\weed_area.nb_instances EQ .\row.nb_instances + 1"/>
+	    <constraint name="nb_inner_track_width"
+	                expressions=".\inner_track_width.nb_instances EQ .\row.nb_instances - 1"/>
+
+	</node>
+
+    <node name="mission" nb_instances="1">
+        <parameter name="two_pass" type="boolean"/>
+	    <parameter name="is_first_track_outer" type="boolean"/>
+	    <parameter name="final_track_outer" type="boolean"/>
+	    <parameter name="is_track_side_at_left" type="boolean"/>
+	    <parameter name="is_first_uturn_right_side" type="boolean"/>
+	    <constraint name="first_track"
+	                      expressions="IMPLIES(..\field\row.nb_instances EQ 1, .\is_first_track_outer EQ True)"/>
+	</node>
+	<node name="terrain" nb_instances="1">
+	    <node name="heightmap" nb_instances="1">
+	        <parameter name="roughness" type="real" min="0.0" max="1"/>
+	        <parameter name="persistence" type="real" min="0.0" max="0.7"/>
+	    </node>
+    </node>
+
+</root>

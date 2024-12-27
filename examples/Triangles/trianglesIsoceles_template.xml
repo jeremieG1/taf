@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<root name="test_case">
+    <node name="pointType" nb_instances="0">
+		<parameter name="x" type="integer" min="-100" max="100"/>
+		<parameter name="y" type="integer" min="-100" max="100"/>
+	 </node>
+    
+	<node name="triangleType" nb_instances="0">
+		<node name="point" ref="pointType" branching="3"/> 
+	</node>
+
+	<node name="triangleIsoceles" ref="triangleType">
+		<constraint name="isoceles" types="exist;exist;exist" quantifiers="i;j;k" ranges="[0, 2];[0, 2];[0, 2]" 
+			expressions="
+			AND(
+				AND(AND(i DIF j, i DIF k), j DIF k),
+				(
+					((triangleIsoceles[0]\point[j]\x - triangleIsoceles[0]\point[i]\x) ^ 2
+                        + (triangleIsoceles[0]\point[j]\y - triangleIsoceles[0]\point[i]\y) ^ 2)
+					EQ
+					((triangleIsoceles[0]\point[k]\x - triangleIsoceles[0]\point[i]\x) ^ 2
+                        + (triangleIsoceles[0]\point[k]\y - triangleIsoceles[0]\point[i]\y) ^ 2)
+				)
+			)
+			"
+		/>
+	</node>
+
+</root>
